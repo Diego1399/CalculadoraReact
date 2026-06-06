@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# CalculadoraReact
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Calculadora web con diseño minimalista estilo **Deep Ocean**, construida con React 18. Soporta las cuatro operaciones básicas, encadenamiento de operaciones, porcentaje y cambio de signo.
 
-## Available Scripts
+## Vista general
 
-In the project directory, you can run:
+- Interfaz circular con paleta Deep Ocean (azul marino + cyan)
+- Botón `0` ancho (estilo iOS), fuente del display adaptable por longitud
+- Indicador visual del operador activo
+- Lógica separada de la UI en `src/logic/`
 
-### `npm start`
+## Tecnologías
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Capa | Tecnología |
+|---|---|
+| Framework | React 18.3 |
+| Estilos | CSS plano con custom properties (tokens) |
+| Build | Create React App / Webpack |
+| Routing | react-router-dom 6 (disponible, sin usar aún) |
+| Testing | Jest + @testing-library/react |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Estructura del proyecto
 
-### `npm test`
+```
+src/
+├── App.js                        # Componente raíz
+├── App.css                       # Layout centrado
+├── index.css                     # Tokens de diseño (colores, tamaños)
+├── index.js                      # Entry point React
+├── components/
+│   ├── classic.js                # Calculadora: estado y grid principal
+│   ├── classic.css               # Estilos del contenedor y display
+│   ├── header.js                 # Header (disponible, sin usar)
+│   └── buttons/
+│       ├── button.js             # Componente botón (variantes: number, operator, special)
+│       └── button.css            # Estilos de botones por variante
+└── logic/
+    ├── calculate.js              # Operaciones aritméticas (+, -, ×, ÷)
+    ├── display.js                # Formateador del valor en pantalla
+    └── isNumber.js               # Utilidad: detecta si un caracter es dígito
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tokens de diseño
 
-### `npm run build`
+Todos los colores y tamaños se definen como CSS custom properties en `src/index.css`:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```css
+:root {
+    --color-bg: #0d1117;           /* Fondo azul marino */
+    --color-btn-number: #1e2d3d;   /* Botones numéricos */
+    --color-btn-operator: #00b4d8; /* Botones operadores (cyan) */
+    --color-btn-special: #2d4a6b;  /* Botones especiales (AC, ±, %) */
+    --color-text: #e0f7fa;         /* Texto general */
+    --color-text-special: #e0f7fa; /* Texto botones especiales */
+    --btn-size: 80px;
+    --btn-gap: 14px;
+    --btn-border-radius: 50%;
+    --display-font-size: 80px;
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para cambiar la paleta completa basta con editar estos valores.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Ramas
 
-### `npm run eject`
+| Rama | Contenido |
+|---|---|
+| `main` | Código estable integrado |
+| `feature/frontend` | UI, componentes y estilos |
+| `feature/logic` | Lógica de cálculo y display |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Instalación
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Requisitos:** Node.js 16+ y npm.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clonar el repositorio
+git clone https://github.com/Diego1399/CalculadoraReact.git
+cd CalculadoraReact/calculator
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Instalar dependencias
+npm install
+```
 
-## Learn More
+## Comandos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# Servidor de desarrollo (http://localhost:3000)
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Ejecutar tests
+npm test
 
-### Code Splitting
+# Build de producción (carpeta /build)
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Versiones
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Versión | Descripción |
+|---|---|
+| `v0.1.0` | Primera versión: UI Deep Ocean + lógica de cálculo completa |
