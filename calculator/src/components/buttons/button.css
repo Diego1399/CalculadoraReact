@@ -1,0 +1,49 @@
+.btn {
+    width: var(--btn-size);
+    height: var(--btn-size);
+    border-radius: var(--btn-border-radius);
+    border: none;
+    font-size: var(--btn-font-size);
+    font-family: inherit;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.08s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.btn:active {
+    filter: brightness(1.5);
+}
+
+.btn--number {
+    background-color: var(--color-btn-number);
+    color: var(--color-text);
+}
+
+.btn--operator {
+    background-color: var(--color-btn-operator);
+    color: var(--color-text);
+}
+
+.btn--operator.btn--active {
+    background-color: var(--color-text);
+    color: var(--color-btn-operator);
+}
+
+.btn--special {
+    background-color: var(--color-btn-special);
+    color: var(--color-text-special);
+}
+
+.btn--wide {
+    width: calc(var(--btn-size) * 2 + var(--btn-gap));
+    grid-column: span 2;
+    justify-content: flex-start;
+    padding-left: calc(var(--btn-size) * 0.3);
+    border-radius: calc(var(--btn-size) / 2);
+}
