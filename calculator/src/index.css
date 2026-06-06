@@ -1,0 +1,25 @@
+:root {
+    --color-bg: #0d1117;
+    --color-btn-number: #1e2d3d;
+    --color-btn-operator: #00b4d8;
+    --color-btn-special: #2d4a6b;
+    --color-text: #e0f7fa;
+    --color-text-special: #e0f7fa;
+    --btn-size: 80px;
+    --btn-font-size: 32px;
+    --display-font-size: 80px;
+    --btn-gap: 14px;
+    --btn-border-radius: 50%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
