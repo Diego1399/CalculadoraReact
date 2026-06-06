@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Diego1399/CalculadoraReact.git/static/css/main.30cb7de2.css",
-    "main.js": "/Diego1399/CalculadoraReact.git/static/js/main.c33f401c.js",
-    "static/js/453.83bdee10.chunk.js": "/Diego1399/CalculadoraReact.git/static/js/453.83bdee10.chunk.js",
-    "index.html": "/Diego1399/CalculadoraReact.git/index.html",
-    "main.30cb7de2.css.map": "/Diego1399/CalculadoraReact.git/static/css/main.30cb7de2.css.map",
-    "main.c33f401c.js.map": "/Diego1399/CalculadoraReact.git/static/js/main.c33f401c.js.map",
-    "453.83bdee10.chunk.js.map": "/Diego1399/CalculadoraReact.git/static/js/453.83bdee10.chunk.js.map"
+    "main.css": "/CalculadoraReact/static/css/main.30cb7de2.css",
+    "main.js": "/CalculadoraReact/static/js/main.d881d46b.js",
+    "static/js/453.83bdee10.chunk.js": "/CalculadoraReact/static/js/453.83bdee10.chunk.js",
+    "index.html": "/CalculadoraReact/index.html",
+    "main.30cb7de2.css.map": "/CalculadoraReact/static/css/main.30cb7de2.css.map",
+    "main.d881d46b.js.map": "/CalculadoraReact/static/js/main.d881d46b.js.map",
+    "453.83bdee10.chunk.js.map": "/CalculadoraReact/static/js/453.83bdee10.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.30cb7de2.css",
-    "static/js/main.c33f401c.js"
+    "static/js/main.d881d46b.js"
   ]
 }
